@@ -1,0 +1,16 @@
+{
+  "research_id": "KR-AI-RES-001",
+  "question": "Which repeated consulting tasks are suitable for AI assistance, and which should remain human-led?",
+  "domain": "AI",
+  "audience": "Independent consultants",
+  "business_id": "KAIZEN-RESEARCH",
+  "language": "English",
+  "geography": "United States; distinguish other jurisdictions",
+  "source_cutoff": "2026-09-18",
+  "exclusions": [
+    "No confidential customer records",
+    "No unsupported time-saving promises"
+  ],
+  "perspectives": [],
+  "risk_tier": "general"
+}

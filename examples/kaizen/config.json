@@ -1,0 +1,21 @@
+{
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "background": true,
+  "store": true,
+  "limits": {
+    "max_requests": 10,
+    "max_tool_calls": 8,
+    "max_output_tokens": 12000,
+    "max_input_chars": 180000,
+    "max_response_bytes": 8000000,
+    "max_polls": 180,
+    "request_timeout_seconds": 120,
+    "poll_interval_seconds": 5,
+    "max_questions": 4,
+    "max_followups": 1,
+    "max_estimated_cost_usd": 0,
+    "estimated_cost_per_request_usd": 0
+  },
+  "allowed_domains": []
+}
