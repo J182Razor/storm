@@ -25,3 +25,8 @@ secrets.toml
 */assertion.log
 *results/
 .venv/
+
+# Kaizen private run checkpoints, source material and local configuration
+.kaizen-runs/
+runs/KAIZEN-RESEARCH/
+kaizen-config.local.json

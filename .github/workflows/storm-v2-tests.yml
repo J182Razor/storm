@@ -1,0 +1,32 @@
+name: STORM v2 offline tests
+on:
+  push:
+    branches: [storm-v2]
+  pull_request:
+    branches: [main]
+    paths:
+      - 'storm_v2/**'
+      - 'tests/storm_v2/**'
+      - '.github/workflows/storm-v2-tests.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.11', '3.12', '3.13']
+    env:
+      OPENAI_API_KEY: ''
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m unittest discover -s tests/storm_v2 -v
+      - run: python -m compileall -q storm_v2
+      - run: python -m storm_v2 run --brief examples/kaizen/brief.json --dry-run
+      - run: python -m storm_v2 run --brief examples/kaizen/brief.json --fixture
